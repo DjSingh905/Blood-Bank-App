@@ -2,6 +2,7 @@ const userModel = require("../models/userModel");
 
 //get donar list
 const getDonarsListController = async (req, res) => {
+  
   try {
     const donarData = await userModel
       .find({ role: "donar" })
