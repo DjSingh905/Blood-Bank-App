@@ -66,7 +66,8 @@ const createInventoryController = async (req, res) => {
         });
       }
       req.body.hospital = user?._id;
-    } else {
+    } 
+    else {
       req.body.donar = user?._id;
     }
     const inventory = new inventoryModel(req.body);
@@ -77,7 +78,7 @@ const createInventoryController = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).send({
+    return res.status(501).send({
       success: false,
       message: "Errro In Create Inventory API",
       error,
